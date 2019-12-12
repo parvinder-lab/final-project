@@ -30,7 +30,7 @@ const itemString = new XMLSerializer().serializeToString(cu.parentNode);
 const id = cu.id;
 window.localStorage.setItem(id, itemString);
 }
-
+  
 function addNewToDo(event) {
     event.preventDefault();
 
@@ -97,3 +97,13 @@ function delfunc(htg){
        
         this.style.backgroundColor = "brown";
       }
+      
+window.addEventListener('offline', offlinefunc);
+window.addEventListener('online', onlinefunc);
+
+  function onlinefunc(){
+      alert("Your Todo is working online")
+  }
+  function offlinefunc(){
+    alert("Your Todo is working offline")
+}
